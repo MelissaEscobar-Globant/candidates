@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:latest
+    hostname: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    volumes:
+          - ../pg_data:/var/lib/postgresql/data
+          - ../db_logs:/var/log/postgresql
+          - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+    - postgres
