@@ -18,7 +18,7 @@ Before you begin, ensure you have the following dependencies installed on your s
   ```
 2. Creare directories for logs and Postgres data. Then, change to the project directory:
   ```bash
-    mkdir pg_logs pg_data
+    mkdir pg_logs pg_data redis_data
     cd candidates
   ```
 3. Build and start the Docker containers:
@@ -60,8 +60,15 @@ Username: postgres
 Password: password
 Database: candidates_development
 
+# Redis
+Redis is hosted in a separate Docker container.
+
+Redis data is persisted in the ../redis_data Docker volume to survive container restarts.
+
+To use Redis in your Rails application, configure it accordingly. For example, to connect to Redis in your Rails app, use the hostname redis and the default port 6379.
+
 # Docker Compose Configuration
-docker-compose.yml defines the services and their configuration, including the Rails web application and PostgreSQL database.
+docker-compose.yml defines the services and their configuration, including the Rails web application, PostgreSQL database, and Redis.
 
 # License
 This project is licensed under the MIT License.
