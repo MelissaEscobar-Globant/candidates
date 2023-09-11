@@ -1,4 +1,4 @@
-# Rails Dockerized Project
+# Candidates: A Rails Dockerized Project
 
 This repository contains a Dockerized Ruby on Rails application with a PostgreSQL database. It allows you to easily set up and run the application in a Docker container using Docker Compose.
 
@@ -16,7 +16,7 @@ Before you begin, ensure you have the following dependencies installed on your s
   ```bash
     git clone git@github.com:MelissaEscobar-Globant/candidates.git
   ```
-2. Creare directories for logs and Postgres data. Then, change to the project directory:
+2. Creare directories for logs, Redis and Postgres data. Then, change to the project directory:
   ```bash
     mkdir pg_logs pg_data redis_data
     cd candidates
