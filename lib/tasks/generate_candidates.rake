@@ -4,7 +4,7 @@ namespace :candidates do
     require 'csv'
     require 'faker'
 
-    num_records = 100
+    num_records = 10_000
 
     file_path = Rails.root.join('public', 'candidates.csv')
 
