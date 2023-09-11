@@ -57,6 +57,12 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def populate_candidates
+    GenerateCsvJob.perform_later
+    flash[:notice] = 'CSV generation and insertion started in the background.'
+    redirect_to candidates_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_candidate
