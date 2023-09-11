@@ -2,6 +2,10 @@
 
 <h1>Candidates</h1>
 
+<div>
+  <%= button_to "Populate Candidates", action: 'populate_candidates' %>
+</div>
+
 <div id="candidates">
   <% @candidates.each do |candidate| %>
     <%= render candidate %>

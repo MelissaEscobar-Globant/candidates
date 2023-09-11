@@ -13,6 +13,13 @@ services:
           - ../pg_data:/var/lib/postgresql/data
           - ../db_logs:/var/log/postgresql
           - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    command: redis-server
+
   web:
     build:
       context: ./
@@ -21,3 +28,4 @@ services:
       - 3000:3000
     depends_on:
     - postgres
+    - redis

@@ -21,5 +21,8 @@ namespace :candidates do
     end
 
     puts "CSV file 'candidates.csv' with #{num_records} records generated successfully at #{file_path}."
+
+    # Enqueue insertion of the records into the DB after generating the CSV
+    InsertCsvRecordsJob.perform_later(file_path)
   end
 end
