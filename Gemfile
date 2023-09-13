@@ -35,6 +35,7 @@ gem "bootsnap", require: false
 gem 'resque', '~> 2.6'
 gem 'redis', '~> 5.0', '>= 5.0.7'
 gem 'hiredis' # Optional for faster connection library
+gem 'will_paginate'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

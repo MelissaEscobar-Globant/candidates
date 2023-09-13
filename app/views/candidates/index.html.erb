@@ -7,12 +7,24 @@
 </div>
 
 <div id="candidates">
-  <% @candidates.each do |candidate| %>
-    <%= render candidate %>
-    <p>
-      <%= link_to "Show this candidate", candidate %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @candidates.each do |candidate| %>
+        <tr>
+          <%= render candidate %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+
+<%= will_paginate @candidates %>
 
 <%= link_to "New candidate", new_candidate_path %>
