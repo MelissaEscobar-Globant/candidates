@@ -1,17 +1,4 @@
-<div id="<%= dom_id candidate %>">
-  <p>
-    <strong>Name:</strong>
-    <%= candidate.name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= candidate.email %>
-  </p>
-
-  <p>
-    <strong>Phone number:</strong>
-    <%= candidate.phone_number %>
-  </p>
-
-</div>
+  <td><%= candidate.name %></td>
+  <td><%= candidate.email %></td>
+  <td><%= candidate.phone_number %></td>
+  <td><%= link_to "Show candidate", candidate %></td>

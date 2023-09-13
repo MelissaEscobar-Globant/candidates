@@ -3,7 +3,7 @@ class CandidatesController < ApplicationController
 
   # GET /candidates or /candidates.json
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.paginate(page: params[:page], per_page: 20)
   end
 
   # GET /candidates/1 or /candidates/1.json
@@ -71,6 +71,6 @@ class CandidatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def candidate_params
-      params.require(:candidate).permit(:name, :email, :phone_number)
+      params.require(:candidate).permit(:name, :email, :phone_number, :page)
     end
 end
